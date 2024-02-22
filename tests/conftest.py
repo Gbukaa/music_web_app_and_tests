@@ -1,6 +1,8 @@
 import pytest
 from lib.database_connection import DatabaseConnection
-from app import app
+#from app import app
+from music_web_app import *
+from music_web_app import *
 
 # This is a Pytest fixture.
 # It creates an object that we can use in our tests.
@@ -14,8 +16,8 @@ def db_connection():
 # We'll also create a fixture for the client we'll use to make test requests.
 @pytest.fixture
 def web_client():
-    app.config['TESTING'] = True # This gets us better errors
-    with app.test_client() as client:
+    music_web_app.config['TESTING'] = True # This gets us better errors
+    with music_web_app.test_client() as client:
         yield client
 
 # Now, when we create a test, if we allow it to accept a parameter called
